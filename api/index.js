@@ -11,14 +11,15 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ['https://project-kiosk-sable.vercel.app','https://project-counter-two.vercel.app'],
-    methods: ['GET', 'POST']
+    origin: ['https://project-kiosk-sable.vercel.app', 'https://project-counter-two.vercel.app'],
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://project-kiosk-sable.vercel.app','https://project-counter-two.vercel.app'],
+  origin: ['https://project-kiosk-sable.vercel.app', 'https://project-counter-two.vercel.app'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
@@ -82,7 +83,6 @@ io.on('connection', (socket) => {
   });
 });
 
-// For local execution
 if (process.env.NODE_ENV !== 'production') {
   const PORT = process.env.PORT || 3000;
   server.listen(PORT, '0.0.0.0', () => {
