@@ -7,11 +7,6 @@
   },
   "routes": [
     {
-      "src": "/api/twilio-token",
-      "dest": "/api/twilio-token.js",
-      "methods": ["POST"]
-    },
-    {
       "src": "/socket.io/(.*)",
       "dest": "/api/index.js"
     },
