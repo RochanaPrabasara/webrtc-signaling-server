@@ -11,14 +11,14 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: ['https://project-kiosk-sable.vercel.app','https://project-counter-two.vercel.app'],
     methods: ['GET', 'POST']
   }
 });
 
 app.use(express.json());
 app.use(cors({
-  origin: '*',
+  origin: ['https://project-kiosk-sable.vercel.app','https://project-counter-two.vercel.app'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
