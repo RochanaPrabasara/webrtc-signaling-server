@@ -11,7 +11,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ['https://project-kiosk-sable.vercel.app', 'https://project-counter-two.vercel.app'],
+    origin: ['http://localhost:4200', 'http://localhost:4201'],
     methods: ['GET', 'POST'],
     credentials: true
   }
@@ -19,7 +19,7 @@ const io = new Server(server, {
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://project-kiosk-sable.vercel.app', 'https://project-counter-two.vercel.app'],
+  origin: ['http://localhost:4200', 'http://localhost:4201'],
   methods: ['GET', 'POST'],
   credentials: true
 }));
